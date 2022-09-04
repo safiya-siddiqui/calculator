@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji slider</title>
+</head>
+
+<style>
+    *{
+        margin:0px;
+        width: 0px;
+    }
+    body{
+        background-color: rgb(113, 108, 108);
+    }
+    .section .emojies{
+       
+        background-position:center;
+        height: 200px;
+        width: 200px;
+    }
+    .wrapper{
+        height: 400px;
+        background-color: aliceblue;
+        width: 400px;
+        margin: 20px auto;
+        padding: 18px;
+        margin-left: 500px;
+        border-radius: 45px;
+        display: flex;
+        align-items: center;
+    }
+    img{
+        width: 300px;
+        position:relative;
+margin-left: 50px;
+    }
+   .wrapper.section {
+    height: 150px;
+    width: 150px;
+    overflow:hidden;
+   }
+
+   .section .emojies  li {
+   list-style: none;
+   height: 20%;
+   width: 500%;
+
+   }
+   .section.emojies{
+    display: flex;
+   
+    flex-direction: column;
+    transition: all 0.3 ease;
+   }
+
+
+   .wrapper.slider{
+    
+    position: relative;
+    height: 12px;
+    width: 100%;
+    margin-top: 80px;
+   background: #d9d9d9;
+   border-radius: 50px;
+   }
+   .slider input{
+    position: absolute;
+    width: 400px;
+    height: 120%;
+    background: none;
+    outline: none;
+    top: 0;
+    
+   
+   }
+   
+   .slider input::-webkit-slider-thumb{
+    width: 25px;
+    height: 25px;
+    background: none;
+   
+   }
+   .slider .progressbar {
+    background: red;
+    width: 50%;
+    height: 100%;
+border-radius: 50px;
+
+   }
+
+</style>
+<body>
+    <div class="wrapper">
+        <div class="section">
+            <div class="emojies">
+                <li class="slide-icon"><img src="./emoji5.png" alt="emoji"></li>
+                <li class="slide-icon"><img src="./emoji4.png" alt="emoji"></li>
+                <li class="slide-icon"><img src="./emoji3.png" alt="emoji"></li>
+               
+            </div>
+            </div>
+            <div class="slider">
+               <div class="thumb"></div>
+               <div class="progressbar"></div>
+                <input type="range" min="0" max="100" value="0">
+            </div>
+       
+    </div>
+
+
+    <script>
+        const slider = document.querySelector("input");
+        const bar = document.querySelector(".progressbar");
+        const thumb =document.querySelector(".thumb");
+        const slideIcon =document.querySelector(".slide-icon");
+
+        slider .oninput =() =>{
+            let value=slider.value;
+            thumb.style.left = value + '%' ;
+            bar.style.left = value + '%' ;
+
+            if(value<20){
+                slideIcon.style.marginTop ='0px'
+            }
+
+            if(value>=20){
+                slideIcon.style.marginTop ='-150px'
+            }
+        }
+
+    </script>
+</body>
+</html>

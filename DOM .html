@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom manipulation</title>
+</head>
+<body>
+
+  <div id="tittle" style="color: red; background-color:aquamarine;">
+
+<h2 >hello my  cute sister</h2>
+    
+  </div>
+    
+
+  <button id="red" class="colorSquare" style="height: 200px; width:200px; background-color:red; " value='red'></button>
+
+ <button id="yellow" class="colorSquare" style="height: 200px; width:200px; background-color:rgb(221, 255, 0) ; " value='yellow'></button>
+
+  <button id="green" class="colorSquare"  style="height: 200px; width:200px; background-color:rgb(17, 158, 48) ; " value='green'>
+  <div> <button type="button" style="width: 400px; height:40px"  id="cleargame" > clearbutton</button></div>
+ 
+</body>
+<script>
+   tittle.style.color = 'blue';
+//let redDiv=document.getElementById('red')
+//let yellowDiv= document.getElementById('yellow')
+//let greenDiv= document.getElementById('green')
+
+//redDiv.onclick=()=>console.log('red');
+
+//yellowDiv.onclick=()=>console.log('yellow'); 
+//greenDiv.onclick=()=>console.log('green');
+
+const squares = document.querySelectorAll('.colorSquare')
+
+
+const timeclicked={'red':0,'yellow':0 ,'green':0}
+squares.forEach(square =>{
+    square.onclick = () =>{
+      timeclicked[square.value] +=1
+      square.innerText= timeclicked[square.value]
+    }
+})
+
+function clearbtn(){
+  timeclicked.red=0
+  timeclicked.yellow=0
+  timeclicked.green=0
+
+  squares.forEach(square =>{
+    square.innerText=''
+})
+}
+const cleargamebtn= document.getElementById('cleargame')
+cleargamebtn.onclick=()=>clearbtn()
+
+
+
+
+//pick the random fruits//
+const randomfruits = (fruits)=>{
+  let randomNumber=Math.floor(Math.random()*fruits.length)
+  console.log(randomNumber);
+  return fruits[randomNumber]
+}
+
+fruits=['rock','paper','scissor']
+console.log(randomfruits(fruits));
+
+
+
+
+//if else if else statement
+
+const weatherchange = (weather,weather2)=>{
+ 
+  let score
+  if(weather== 'rainy' && weather2 =='overcast'){
+
+  score= 2
+}
+
+else if(weather == 'rainy'){
+  score = 1
+}
+  else if(weather=='sunny'){
+  score = -1
+  }
+  else{
+  score=0
+}
+return score
+}
+
+console.log(weatherchange('rainy'));
+
+</script>
+
+</html>

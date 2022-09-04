@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendship calculator</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+
+   body{
+    background-image: url(./couple.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    
+ 
+   }
+
+    img{
+        width: 200px;
+        height: 200px;
+        margin-top: 50px;
+margin-left: 100px;
+border-radius: 5px;
+
+    }
+   
+   .card-body{
+    width: 400px;
+    height: 300px;
+    background-color: antiquewhite;
+    margin: 20px auto;
+    padding: 18px;
+    background-repeat: no-repeat;
+background-color: darkkhaki;
+border-radius: 19px;
+border: dashed;
+   }
+   .form-group{
+    margin-left: 100px;
+    border-radius: 6px;
+    width: 150px;
+   
+   }
+   .sign{
+    margin-left: 200px;
+   
+   }
+   .form-control{
+    text-align: center;
+    font-size: 20px;
+    background-color: darkgrey;
+    height: 30px;
+   
+   }
+   header{
+    background-color: rgb(144, 161, 47);
+    width: 500px;
+    margin-left: 920px;
+    margin-top: 150px;
+    border-radius: 20px; border: dotted;
+    
+   }
+   .card-footer{
+    text-align: center;
+    
+    font-size: 30px;
+    font-family:cursive;
+   }
+   .card-header{
+    text-align: center;
+    font-size: 30px;
+    font-family:cursive;
+   
+   }
+   .form-control:hover{
+    background-color: rgb(149, 179, 98);
+   }
+   .btn{
+    width: 150px;
+    background-color: rgb(153, 193, 61);
+    height: 30px;
+    margin-left:140px ;
+    border-radius: 3px;
+font-size: 20px;
+   }
+   h1{
+    color: antiquewhite;
+    margin: auto;
+    padding: 12px;
+    text-align: center;
+    background-color: olive;
+    border: dotted;
+   }
+   .sign{
+    font-size: 30px;
+   }
+   .btn:hover{
+    color: orange;
+    background-color: black;
+   }
+ 
+</style>
+<body>
+    <div><h1>Lets check friendship bond  between two friends using this calculator &#128521 &#128521 &#128521 </h1></div>
+
+    <header>
+        <div class="card">
+            <div class="card-header">  Friendship Calculator &#9829 &#9829 &#9829
+
+            </div>
+            <div class="card-body" >
+                <form action="txt" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name">
+                    </div>
+<br>
+                      <div class="sign"><span>+</span></div>
+                      <br>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Friend Name">
+                    </div>
+               
+                <br>
+                <button type="button" class="btn" onclick = "checklove()" >click on </button>
+
+              
+               <br><br>
+               <div class="form-group">
+                <input type="text"  name="" class="form-control" id="lovedata" placeholder="love percentage  &#128077  &#128521 ">
+               
+               
+               </div>
+
+               <br><br>
+               <div class="form-group">
+                <input type="text"  name="" class="form-control" id="lovedata2" placeholder="Try again  &#128542 &#128542 &#128542   ">
+                
+               </div>
+            
+                </form>
+            </div>
+            <div class="card-footer"> Best friends forever  &#128522 &#128521 
+            </div>
+            
+
+
+
+          
+
+        </div>
+    </header>
+    
+
+    <script>
+        function checklove(){
+            let lovedata= Math.random()*100;
+            lovedata=Math.floor(lovedata);
+
+       
+      
+
+            if(lovedata>50)
+            {
+               document.getElementById('lovedata').value = lovedata +'%' ;
+            
+            }
+            else{
+                document.getElementById('lovedata2').value = lovedata +'% ';
+              
+            }
+
+          
+        }
+
+   
+       
+    </script>
+</body>
+</html>
